@@ -20,6 +20,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+
+    
+    return YES;
+}
+
+- (void)testZip{
     ZipArchive *zip = [[ZipArchive alloc] init];
     NSString *doucment = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *zipFilePath = [doucment stringByAppendingString:@"/image.zip"];
@@ -36,8 +42,6 @@
     if ([zip CloseZipFile2]) {
         NSLog(@"关闭zip压缩");
     }
-    
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

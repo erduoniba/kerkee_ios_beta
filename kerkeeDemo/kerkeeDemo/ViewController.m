@@ -18,6 +18,7 @@
 #import "KCUriDispatcher.h"
 #import "KCFetchManifest.h"
 #import "KCJSCompileExecutor.h"
+#import "HDJSToOCManager.h"
 
 
 @interface ViewController ()
@@ -38,8 +39,10 @@
     KCAssistant* assistant = [[KCAssistant alloc] init];
     KCRelease(assistant);
     
-    [KCRegistMgr registAllClass];
-    KCLog(@"docment dir:\n%@",KCWebPath_HtmlRootPath);
+//    [KCRegistMgr registAllClass];
+    [KCJSBridge registObject:[[HDJSToOCManager alloc] init]];
+    
+//    KCLog(@"docment dir:\n%@",KCWebPath_HtmlRootPath);
     
     m_webView = [[KCWebView alloc] initWithFrame:self.view.bounds];
     //add webview in your view
@@ -57,15 +60,18 @@
 //    NSString* pathTestHtml = [[NSBundle mainBundle] pathForResource:@"test.html" ofType:Nil];
 //    NSURL* url =[NSURL URLWithString:pathTestHtml];
     
-    NSURL* url =[NSURL URLWithString:KCWebPath_ModulesTest_File];
+//    NSURL* url =[NSURL URLWithString:KCWebPath_ModulesTest_File];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"redirect" ofType:@"html"];
+    NSURL *url = [NSURL URLWithString:path];
     
     NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:url];
     [m_webView loadRequest:request];
     
-    [self testFetchManifest];
-    
-    //test action
-    [self testAction];
+//    [self testFetchManifest];
+//    
+//    //test action
+//    [self testAction];
 }
 
 

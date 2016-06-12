@@ -117,6 +117,7 @@ static BOOL sIsOpenJSLog = true;
         [KCJSExecutor callJS:@"ApiBridge.prepareProcessingMessages()" WebView:webView];
         [self onNotified:webView];
     }
+
     /*
     else if (attachApiScheme && [request.URL.scheme isEqualToString:attachApiScheme])
     {
