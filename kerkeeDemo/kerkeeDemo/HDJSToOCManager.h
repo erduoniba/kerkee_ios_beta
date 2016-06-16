@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "KCJSObject.h"
+#import "KCArgList.h"
 
 @interface HDJSToOCManager : KCJSObject
 
-- (void)saveUserInfo:(NSString *)name :(NSString *)password;
+- (void)jsToOc:(KCWebView*)aWebView argList:(KCArgList*)args;
 
-- (void)saveUserInfo2:(NSString *)name;
+- (void)mutualJSOC:(KCWebView*)aWebView argList:(KCArgList*)args;
 
 @end

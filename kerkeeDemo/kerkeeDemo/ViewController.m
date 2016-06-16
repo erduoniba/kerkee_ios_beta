@@ -36,44 +36,52 @@
     // Do any additional setup after loading the view, typically from a nib.
     //addSkipBackupAttributeToItemAtURL
     
-    KCAssistant* assistant = [[KCAssistant alloc] init];
-    KCRelease(assistant);
-    
-//    [KCRegistMgr registAllClass];
-    [KCJSBridge registObject:[[HDJSToOCManager alloc] init]];
-    
-//    KCLog(@"docment dir:\n%@",KCWebPath_HtmlRootPath);
+
     
     m_webView = [[KCWebView alloc] initWithFrame:self.view.bounds];
     //add webview in your view
     [self.view addSubview:m_webView];
     //you can implement webview delegate
     m_jsBridge = [[KCJSBridge alloc] initWithWebView:m_webView delegate:self];
-    
-    
-//    //test uri
-//    KCURIComponents *components = [KCURIComponents componentsWithURL:[NSURL URLWithString:@"scheme://user:password@host:0/path?query=1&q=2#fragment"]
-//                                             resolvingAgainstBaseURL:NO];
 
-    
-
-//    NSString* pathTestHtml = [[NSBundle mainBundle] pathForResource:@"test.html" ofType:Nil];
-//    NSURL* url =[NSURL URLWithString:pathTestHtml];
-    
-//    NSURL* url =[NSURL URLWithString:KCWebPath_ModulesTest_File];
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"redirect" ofType:@"html"];
-    NSURL *url = [NSURL URLWithString:path];
-    
-    NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:url];
-    [m_webView loadRequest:request];
     
 //    [self testFetchManifest];
 //    
 //    //test action
 //    [self testAction];
+    
+   
+    [self hdTest];
+    
+//    [self originTest];
 }
 
+- (void)originTest{
+    KCAssistant* assistant = [[KCAssistant alloc] init];
+    KCRelease(assistant);
+    
+    [KCRegistMgr registAllClass];
+    
+    NSString* pathTestHtml = [[NSBundle mainBundle] pathForResource:@"test.html" ofType:Nil];
+    NSURL* url =[NSURL URLWithString:pathTestHtml];
+    NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:url];
+    [m_webView loadRequest:request];
+}
+
+- (void)hdTest{
+    [KCJSBridge registObject:[[HDJSToOCManager alloc] init]];
+    
+//    NSArray *aa = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documents = aa.firstObject;
+//    NSString *filePath = [documents stringByAppendingPathComponent:@"pm-app/pages/pm/pm.html"];
+//    NSURL *url = [NSURL fileURLWithPath:filePath];
+    
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"redirect" ofType:@"html"];
+    NSURL *url = [NSURL URLWithString:file];
+    
+    NSMutableURLRequest *request =[NSMutableURLRequest requestWithURL:url];
+    [m_webView loadRequest:request];
+}
 
 -(void)testAction
 {

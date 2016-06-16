@@ -1,7 +1,9 @@
 ;(function(window){
 	if (window.WebViewJSBridge)
 		return;
-	window.WebViewJSBridge = {};
+	window.WebViewJSBridge = {
+  
+  };
 
 	console.log("--- kerkee init begin---");
 	var browser={
@@ -27,6 +29,7 @@
     }
 
 	var global = this || window;
+                               
 	var ApiBridge ={
 		msgQueue : [],
 		callbackCache : [],
@@ -38,9 +41,19 @@
 
 	ApiBridge.create = function()
 	{
+                               
+//                               document.write("<script language='javascript' src='custom.js' charset='utf-8'></script");
+                               
+
+                               
 		ApiBridge.bridgeIframe = document.createElement("iframe");
 		ApiBridge.bridgeIframe.style.display = 'none';
-		document.documentElement.appendChild(ApiBridge.bridgeIframe);
+        document.documentElement.appendChild(ApiBridge.bridgeIframe);
+                               
+//                                                              new_element=document.createElement("script");
+//                                                              new_element.setAttribute("type","text/javascript");
+//                                                              new_element.setAttribute("src","custom.js");
+//                                                              document.body.appendChild(new_element);
 	};
 
 	ApiBridge.prepareProcessingMessages = function()
@@ -224,6 +237,24 @@
 	/*****************************************
 	 * 接口
 	 *****************************************/
+                               kerkee.jsToOc = function(s1)
+                               {
+                               ApiBridge.callNative("kerkeeJSManager", "jsToOc",
+                                                    {
+                                                    "s1" : s1
+                                                    });
+                               };
+                               
+                               kerkee.mutualJSOC = function(aString, callback)
+                               {
+                               ApiBridge.callNative("kerkeeJSManager", "mutualJSOC",
+                                                    {
+                                                    "aString" : aString
+                                                    }, callback);
+                               }
+                               
+                               global.kerkeeJSManager = kerkee;
+                               
 	kerkee.testJSBrige = function(aString)
 	{
 		ApiBridge.callNative("jsBridgeClient", "testJSBrige",

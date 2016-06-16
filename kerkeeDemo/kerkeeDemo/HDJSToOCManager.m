@@ -9,6 +9,7 @@
 #import "HDJSToOCManager.h"
 
 #import <UIKit/UIKit.h>
+#import "KCJSBridge.h"
 
 
 @implementation HDJSToOCManager
@@ -17,19 +18,20 @@
     return @"kerkeeJSManager";
 }
 
-- (void)saveUserInfo:(NSString *)name :(NSString *)password{
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"js 上的点击件"
-//                                                        message:nil
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"取消"
-//                                              otherButtonTitles:name, password, nil];
-//    [alertView show];
-    
-    NSLog(@"%@", name);
+
+- (void)jsToOc:(KCWebView*)aWebView argList:(KCArgList*)args{
+    NSLog(@"使用OC对象来处理JS的点击事件 args : %@", args);
 }
 
-- (void)saveUserInfo2:(NSString *)name{
-    NSLog(@"2 : %@", name);
+- (void)mutualJSOC:(KCWebView*)aWebView argList:(KCArgList*)args{
+    NSLog(@"使用OC对象来处理JS的点击事件 args : %@", args);
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setObject:@"success" forKey:@"info"];
+    NSString *json = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:dic options:0 error:nil] encoding:NSUTF8StringEncoding];
+    KCAutorelease(json);
+    //回调
+    [KCJSBridge callbackJS:aWebView callBackID:[args getObject:@"callbackId"] jsonString:json];
 }
 
 @end

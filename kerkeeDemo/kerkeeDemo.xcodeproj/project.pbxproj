@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04544FCE1D124B8200D02AD0 /* kerkee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04544FCD1D124B8200D02AD0 /* kerkee.framework */; };
 		04BD82551CE6D84300943C42 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BD82541CE6D84300943C42 /* smile.png */; };
 		04BD82571CE6D84C00943C42 /* angry.png in Resources */ = {isa = PBXBuildFile; fileRef = 04BD82561CE6D84C00943C42 /* angry.png */; };
-		D959AD5E1CECA4B50032BCD4 /* kerkee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D959AD5D1CECA4B50032BCD4 /* kerkee.framework */; };
-		D959AD5F1CECA4B50032BCD4 /* kerkee.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D959AD5D1CECA4B50032BCD4 /* kerkee.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04D8D3561D12521F0001615C /* redirect.js in Resources */ = {isa = PBXBuildFile; fileRef = 04D8D3551D12521F0001615C /* redirect.js */; };
+		04D8D3C01D12CAF00001615C /* custom.js in Resources */ = {isa = PBXBuildFile; fileRef = 04D8D3BF1D12CAF00001615C /* custom.js */; };
 		D959AD791CECAB280032BCD4 /* cache.manifest in Resources */ = {isa = PBXBuildFile; fileRef = D959AD621CECAB280032BCD4 /* cache.manifest */; };
 		D959AD7A1CECAB280032BCD4 /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = D959AD641CECAB280032BCD4 /* util.js */; };
 		D959AD7B1CECAB280032BCD4 /* urlmapping.conf in Resources */ = {isa = PBXBuildFile; fileRef = D959AD661CECAB280032BCD4 /* urlmapping.conf */; };
@@ -94,7 +95,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D959AD5F1CECA4B50032BCD4 /* kerkee.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,9 +102,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04544FCD1D124B8200D02AD0 /* kerkee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = kerkee.framework; path = "../../../../Users/fangdd/Library/Developer/Xcode/DerivedData/kerkee-dpiwwynfucjqzidicsvgjugajkim/Build/Products/Debug-iphonesimulator/kerkee.framework"; sourceTree = "<group>"; };
 		04BD82541CE6D84300943C42 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		04BD82561CE6D84C00943C42 /* angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = angry.png; sourceTree = "<group>"; };
-		D959AD5D1CECA4B50032BCD4 /* kerkee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = kerkee.framework; path = "/Users/denglibing/Library/Developer/Xcode/DerivedData/kerkee-efedxmikqzwuhrcqombtvussiels/Build/Products/Debug-iphonesimulator/kerkee.framework"; sourceTree = "<absolute>"; };
+		04D8D3551D12521F0001615C /* redirect.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = redirect.js; sourceTree = "<group>"; };
+		04D8D3BF1D12CAF00001615C /* custom.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = custom.js; sourceTree = "<group>"; };
 		D959AD621CECAB280032BCD4 /* cache.manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cache.manifest; sourceTree = "<group>"; };
 		D959AD641CECAB280032BCD4 /* util.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = util.js; sourceTree = "<group>"; };
 		D959AD661CECAB280032BCD4 /* urlmapping.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = urlmapping.conf; sourceTree = "<group>"; };
@@ -183,8 +185,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04544FCE1D124B8200D02AD0 /* kerkee.framework in Frameworks */,
 				DF9BCE4F1C3A5E3C0097A767 /* libz.tbd in Frameworks */,
-				D959AD5E1CECA4B50032BCD4 /* kerkee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +343,7 @@
 		DF83DA771B959D2A003E3F91 = {
 			isa = PBXGroup;
 			children = (
-				D959AD5D1CECA4B50032BCD4 /* kerkee.framework */,
+				04544FCD1D124B8200D02AD0 /* kerkee.framework */,
 				DF046CC71CDC7D40003CA85C /* kerkeeSDK.xcodeproj */,
 				DF9BCE4E1C3A5E3C0097A767 /* libz.tbd */,
 				DF046CF11CDC849D003CA85C /* apiExample */,
@@ -368,6 +370,7 @@
 				D9F5CFED1CECC17C0005E792 /* HDJSToOCManager.h */,
 				D9F5CFEE1CECC17C0005E792 /* HDJSToOCManager.m */,
 				D9F5CFF11CECC1830005E792 /* redirect.html */,
+				04D8D3551D12521F0001615C /* redirect.js */,
 				DF83DA871B959D2A003E3F91 /* AppDelegate.h */,
 				DF83DA881B959D2A003E3F91 /* AppDelegate.m */,
 				DF5D70C01BA9559D008A8FB2 /* KCActionTest.h */,
@@ -451,6 +454,7 @@
 				D959AD611CECAB280032BCD4 /* html */,
 				DF65AB7C1B9EC61B00F24874 /* test.html */,
 				DF83DC4C1B95A441003E3F91 /* kerkee.js */,
+				04D8D3BF1D12CAF00001615C /* custom.js */,
 				DF83DC4D1B95A441003E3F91 /* html.zip */,
 			);
 			name = assets;
@@ -571,6 +575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D8D3C01D12CAF00001615C /* custom.js in Resources */,
 				DF83DC4E1B95A441003E3F91 /* kerkee.js in Resources */,
 				DF83DA8F1B959D2A003E3F91 /* Main.storyboard in Resources */,
 				D9F5CFF21CECC1830005E792 /* redirect.html in Resources */,
@@ -580,6 +585,7 @@
 				DF65AB7D1B9EC61B00F24874 /* test.html in Resources */,
 				D959AD7E1CECAB280032BCD4 /* jquery.lazyload.js in Resources */,
 				D959AD841CECAB280032BCD4 /* normalize.js in Resources */,
+				04D8D3561D12521F0001615C /* redirect.js in Resources */,
 				D959AD7B1CECAB280032BCD4 /* urlmapping.conf in Resources */,
 				D959AD851CECAB280032BCD4 /* require.css.js in Resources */,
 				04BD82571CE6D84C00943C42 /* angry.png in Resources */,
