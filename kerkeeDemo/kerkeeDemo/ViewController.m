@@ -54,6 +54,15 @@
     [self hdTest];
     
 //    [self originTest];
+    
+    UIButton *bb = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    bb.frame = CGRectMake(100, 400, 50, 50);
+    [bb addTarget:self action:@selector(bbbb) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bb];
+}
+
+- (void)bbbb{
+    [KCJSBridge callJSFunction:@"ocToJs" withJSONObject:@{@"hhh" : @"www"} WebView:m_webView];
 }
 
 - (void)originTest{
