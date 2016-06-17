@@ -42,6 +42,10 @@ function buttonClick5(s1, s2, s3, s4){
     kerkeeJSManager.morePraramters(s1, s2, s3, s4);
 }
 
+function buttonClick11(s1){
+    kerkeeJSManager.jsToOc(s1);
+}
+
 function ttt(){
     alert("ttttt");
 }
